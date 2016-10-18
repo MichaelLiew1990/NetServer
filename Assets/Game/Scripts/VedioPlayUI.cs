@@ -50,12 +50,17 @@ public class VedioPlayUI : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.JoystickButton7) || Input.GetKeyDown(KeyCode.F4))
         {
-            net.netMgr.toggleBroadCast.isOn = true;
+            ToggleBroadcast(true);
         }
         if (Input.GetKeyDown(KeyCode.JoystickButton8) || Input.GetKeyDown(KeyCode.F5))
         {
-            net.netMgr.toggleBroadCast.isOn = false;
+            ToggleBroadcast(false);
         }
+    }
+
+    public void ToggleBroadcast(bool isOn)
+    {
+        net.netMgr.toggleBroadCast.isOn = isOn;
     }
 
     public void MovieEnd()
@@ -66,7 +71,7 @@ public class VedioPlayUI : MonoBehaviour
         net.needSyncPose = false;
     }
 
-    void ButtonPlay()
+    public void ButtonPlay()
     {
         if (net.GetOneNetPlayer() != null && !isStarted)
         {
@@ -81,7 +86,7 @@ public class VedioPlayUI : MonoBehaviour
         }
     }
 
-    void ButtonReset()
+    public void ButtonReset()
     {
         car.GetComponent<ChairPose>().isReseting = true;
     }
@@ -109,7 +114,7 @@ public class VedioPlayUI : MonoBehaviour
     //         yield return null;
     //     }
 
-    void ButtonStop()
+    public void ButtonStop()
     {
         if (net.GetOneNetPlayer() != null && isStarted)
         {
