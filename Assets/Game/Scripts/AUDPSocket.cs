@@ -1,8 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System;using System.Collections.Generic;using System.Linq;using System.Text;using System.Net.Sockets;using System.Threading;using System.Net;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Net.Sockets;
+using System.Threading;
+using System.Net;
 
-public class AUDPSocket : MonoBehaviour{
+public class AUDPSocket : MonoBehaviour
+{
     private static AUDPSocket s_instance;
     public static AUDPSocket Instance
     {
@@ -64,4 +71,5 @@ public class AUDPSocket : MonoBehaviour{
         int recv = socket.ReceiveFrom(bytes, ref Remote);
         string sdataFromServer = Encoding.ASCII.GetString(bytes, 0, recv);
         return sdataFromServer;
-    }}
+    }
+}

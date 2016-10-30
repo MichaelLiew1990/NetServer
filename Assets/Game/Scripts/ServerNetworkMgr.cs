@@ -118,7 +118,7 @@ public class ServerNetworkMgr : NetworkManager
     //服务器端使用============================
     public Text text;
 
-    Dictionary<int, string> players;
+    Dictionary<int, string> players;//IP字符后三位
     void ClearPlayer()
     {
         if (players.Count <= 0) return;
